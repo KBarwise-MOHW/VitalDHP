@@ -1,0 +1,414 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "6ff2a473-d642-4d9a-98d1-9991800a64de",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2022-04-20"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "",
+      "custodian_organisation" : "",
+      "original_namespace" : "",
+      "original_publisher" : "",
+      "custodian_namespace" : "",
+      "sem_ver" : "1.3.0",
+      "build_uid" : "",
+      "MD5-CAM-1.0.1" : "b89d9e133f5f4a9856958161938b7ab7"
+    },
+    "details" : {
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nl" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nl"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.vaccination_list.v0",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.t_vaccination_list.v0"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "existence" : "0..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "EVALUATION",
+        "occurrences" : "0..*",
+        "nodeId" : "at0.2",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-immunisation_summary-001.v0",
+        "referenceType" : "archetypeOverlay"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "DHP PL:Vaccination Summary",
+          "description" : "A persistent and managed list of vaccinations that have been administered to an individual over time."
+        }
+      },
+      "nl" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Immunization Summary",
+          "description" : "Een permanente en beheerde lijst van toegediende vaccinaties aan een persoon over een periode van tijd"
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "7c00cea4-1323-35d0-8891-c2cd09ade8e2",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "DHP PL: Vaccination Summary",
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "04c49e5f-0bb9-4e8f-9452-1a0d35118af3",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : { },
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung der Zusammenfassung des Immunstatus für eine identifizierte Infektionskrankheit oder Erreger.",
+          "keywords" : [ "Immunisierung", "Impfung", "Schutzimpfung", "Immunstatus", "Zusammenfassung", "primär", "Erstimpfung", "Auffrischung" ],
+          "use" : "Diesen Archetypen verwenden, um eine Zusammenfassung eines Klinikers über den Immunstatus für eine identifizierte Infektionskrankheit oder Erreger aufzuzeichnen.\r\n\r\nDieser Archetyp setzt keinen bestimmten Zeitplan oder ein bestimmtes Protokoll für die Immunisierung voraus.",
+          "misuse" : "Nicht zur Aufzeichnung des Status eines möglichen Immunstatus des Patienten zu erfassen. Der Immunstatus und die Notwendigkeit einer laufenden Immunisierung oder Auffrischung ist eine klinische Entscheidung, die durch eine Vielzahl von Faktoren bestimmt wird - klinische Anzeichen einer früheren Infektion, Immunisierungsstatus, Immunisierungsgeschichte, serologische Ergebnisse, Kontraindikationen, unerwünschte Reaktionen und der klinische Auslöser, z.B. eine Nadelstichverletzung oder die Exposition gegenüber einer Infektionskrankheit/einem Infektionserreger.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "Para el registro de un resumen del estado de vacunación para una enfermedad o agente infeccioso conocido.",
+          "keywords" : [ "vacunación", "inmunización", "resumen", "primario", "ciclo", "refuerzo" ],
+          "use" : "Utilizar para registrar el resumen de un clínico acerca del estado de vacunación para una enfermedad o agente infeccioso. \r\nEl arquetipo no presupone calendario particular alguno ni un protocolo de vacunación.",
+          "misuse" : "No utilizar para el registro del estado inmune posible de una persona. El estado inmune y la necesidad de un ciclo de vacunación o refuerzo partirá de una decisión clínica determinada por un conjunto de factores: evidencia clínica de infección previa, estado de vacunación, historia de vacunación, resultados de serología, contraindicaciones, reacciones adversas, o un disparador clínico (pinchazo por aguja o exposición a una enfermedad o agente infeccioso).",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar um sumário do estado de vacinação de uma doença infecciosa identificada ou agente.",
+          "keywords" : [ "vacinação", "imunização", "sumário", "primário", "etapa", "reforço" ],
+          "use" : "Utilizada para gravar uma declaração resumida de um clínico sobre o estado de vacinação de uma doença infecciosa identificada ou agente. \r\n\r\nEste arquétipo não presume qualquer esquema particular ou protocolo de vacinação.",
+          "misuse" : "Não deve ser usado para gravar o possível estado imune do indivíduo. O estado imune e a necessidade de vacinação ou reforço será uma decisão clínica determinada por um número de fatores - evidência clínica de infecção prévia; estado de vacinação; histórico de vacinação; resultados serológicos; contraindicações; reações adversas; e um gatilho clínico p.e. um ferimento por picada de agulha ou exposição a doenças infecciosas/agente.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a summary of the immunisation status for an identified infectious disease or agent.",
+          "keywords" : [ "immunisation", "immunisation", "immunization", "summary", "primary", "course", "booster" ],
+          "use" : "Use to record a summary statement by a clinician about the immunisation status for an identified infectious disease or agent.\r\n\r\nThis archetype does not presume any particular schedule or protocol for immunisation.",
+          "misuse" : "Not to be used to record a status of the subject's possible immune status. Immune status and need for ongoing immunisation or booster will be a clinical decision determined by a number of factors - clinical evidence of previous infection; immunisation status; immunisation history; serology results; contraindications; adverse reactions; and the clinical trigger eg a needle stab injury or exposure to an infectious disease/agent.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.immunisation_summary.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-immunisation_summary-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "1..1",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
+                      "terminologyId" : {
+                        "value" : "http://snomedct.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "selectedTerminologies" : [ "http://snomedct.info/sct" ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "14189004",
+                        "value" : "Measles (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "36989005",
+                        "value" : "Mumps (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "36653000",
+                        "value" : "Rubella (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "397430003",
+                        "value" : "Diphtheria caused by Corynebacterium diphtheriae (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "27836007",
+                        "value" : "Pertussis (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "398102009",
+                        "value" : "Acute poliomyelitis (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "840539006",
+                        "value" : "Disease caused by Severe acute respiratory syndrome coronavirus 2 (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "66071002",
+                        "value" : "Viral hepatitis type B (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "709410003",
+                        "value" : "Haemophilus influenzae type b infection (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "442438000",
+                        "value" : "Influenza caused by Influenza A virus (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "76902006",
+                        "value" : "Tetanus (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "16541001",
+                        "value" : "Yellow fever (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "56717001",
+                        "value" : "Tuberculosis (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "16814004",
+                        "value" : "Pneumococcal infectious disease (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "240532009",
+                        "value" : "Human papillomavirus infection (disorder)"
+                      }, {
+                        "terminologyId" : "http://snomedct.info/sct",
+                        "code" : "359811007",
+                        "value" : "Human monkeypox (disorder)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "es-ar" : { },
+        "pt-br" : { },
+        "de" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "df582c4f-021f-43f7-bea9-fbb572853266",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Alina Rehberg",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de; rehberg.alina@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Pilar, Buenos Aires, Argentina.",
+        "email" : "alandmarch@gmail.com"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Adriana Kitajima, Débora Farage, Fernanda Maia, Laíse Figueiredo, Marivan Abrahão",
+        "organisation" : "Core Consulting",
+        "email" : "contato@coreconsulting.com.br"
+      },
+      "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
+      "otherDetails" : { }
+    } ]
+  } ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nl"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  } ]
+}
